@@ -1,0 +1,18 @@
+[project]
+name = "python-app"
+version = "0.1.0"
+
+requires-python  = ">= 3.8"
+dependencies = [
+    "numpy >= 2.0.0"
+]
+
+[tool.setuptools]
+packages = ["python_app"]
+
+[build-system]
+requires = ["setuptools >= 70.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project.scripts]
+python-app = "python_app.main:main"
