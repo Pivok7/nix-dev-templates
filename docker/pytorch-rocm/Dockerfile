@@ -1,0 +1,5 @@
+FROM rocm/pytorch:rocm7.0.2_ubuntu24.04_py3.12_pytorch_release_2.8.0
+
+COPY src src
+
+CMD ["/bin/sh", "-c", "cd src; ./run.sh"]
