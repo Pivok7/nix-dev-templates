@@ -2,12 +2,15 @@
 # Don't use "set -e"
 # We want to shutdown when user presses ctrl-c
 
+IMAGE_ROCM=pytorch-rocm
+IMAGE_CUDA=pytorch-cuda
+
 build_rocm() {
-    sudo docker build -f Dockerfile-rocm -t pytorch-rocm .
+    sudo docker build -f Dockerfile-rocm -t ${IMAGE_ROCM} .
 }
 
 build_cuda() {
-    sudo docker build -f Dockerfile-cuda -t pytorch-cuda .
+    sudo docker build -f Dockerfile-cuda -t ${IMAGE_CUDA} .
 }
 
 run_rocm() {
@@ -15,13 +18,13 @@ run_rocm() {
 	--device=/dev/kfd \
 	--device=/dev/dri \
 	--group-add video \
-	pytorch rocm
+	${IMAGE_ROCM} rocm
 }
 
 run_cuda() {
     sudo docker run --rm \
 	--device=nvidia.com/gpu=all \
-	pytorch-cuda
+	${IMAGE_CUDA}
 }
 
 clean() {
