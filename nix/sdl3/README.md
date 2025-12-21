@@ -16,5 +16,9 @@ Run:
 
 Nixos:
 ```
+nix build .
+```
+or
+```
 nix run .
 ```
