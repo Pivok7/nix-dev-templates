@@ -59,7 +59,8 @@
           buildInputs = _buildInputs;
 
           unpackPhase = ''
-            cp -r ${src}/. .
+            cp -r ${src}/src .
+            cp -r ${src}/CMakeLists.txt .
             mkdir -p vendored
             cp -r ${SDL3-v3_2_28}/. vendored/SDL
           '';
