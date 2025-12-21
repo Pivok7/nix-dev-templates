@@ -32,8 +32,14 @@
           libxkbcommon
           wayland
           alsa-lib
-	  sdl3
         ];
+
+        SDL3-v3_2_28 = pkgs.fetchFromGitHub {
+          owner = "libsdl-org";
+          repo = "SDL";
+          rev = "7f3ae3d57459e59943a4ecfefc8f6277ec6bf540";
+          hash = "sha256-nfnvzog1bON2IaBOeWociV82lmRY+qXgdeXBe6GYlww=";
+        };
       in
       {
         devShells.default = pkgs.mkShell rec {
@@ -55,6 +61,8 @@
           unpackPhase = ''
             cp -r ${src}/src .
             cp -r ${src}/CMakeLists.txt .
+            mkdir -p vendored
+            cp -r ${SDL3-v3_2_28}/. vendored/SDL
           '';
 
           # This hack is here because SDL3 does dlopen() a lot
