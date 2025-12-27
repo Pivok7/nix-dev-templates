@@ -32,7 +32,7 @@
           libxkbcommon
           wayland
           alsa-lib
-	  sdl3
+          sdl3
         ];
       in
       {
