@@ -26,16 +26,16 @@
         {
           default = pkgs.mkShell {
             packages = (
-              (with pkgs; [
-                python3
-              ])
-              ++ (with pkgs.python3Packages; [
-                pytorch
-                pandas
-                numpy
-                matplotlib
-              ])
+              with pkgs;
+              [
+                nushell
+              ]
             );
+
+            shellHook = ''
+              echo "nushell   `nu -v`"
+              exec nu --config ./config.nu
+            '';
           };
         }
       );
