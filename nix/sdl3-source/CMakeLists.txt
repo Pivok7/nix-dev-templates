@@ -10,7 +10,7 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/$<CONFIGURATION>")
 include(FetchContent)
 
 # Check if vendored SDL exists, otherwise fetch from internet
-set(SDL3_REQUIRED_VERSION 3.1.0)   # adjust to the minimum you need
+set(SDL3_REQUIRED_VERSION 3.2.0)   # adjust to the minimum you need
 find_package(SDL3 ${SDL3_REQUIRED_VERSION} QUIET)
 
 if (NOT SDL3_FOUND)
