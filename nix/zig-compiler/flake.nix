@@ -1,4 +1,10 @@
 {
+  # Useful commnads
+  # - build stage 4 -
+  # stage3/bin/zig build -p stage4 -Denable-llvm -Dno-lib
+  # - run tests -
+  # stage4/bin/zig build test-libc -Dlibc-test-path=../../libc-test -Dtest-filter=FILTER_HERE -fqemu -fwasmtime --summary line
+
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
