@@ -15,7 +15,7 @@ stage3/bin/zig build -p stage4 -Denable-llvm -Dno-lib
 Search in lib/libc for occurrences of function and delete
 Search in src/libs for occurrences of function and delete
 Add myself to lib/c
-Enable tests in tests/libc.zig
+Enable tests in test/libc.zig
 
 Rerun
 ```
